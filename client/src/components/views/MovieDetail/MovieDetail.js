@@ -5,6 +5,7 @@ import { IMAGE_BASE_URL } from "../../Config"
 import MovieInfo from "./Sections/MovieInfo"
 import GridCards from "../commons/GridCards"
 import {Row} from 'antd'
+import Favorite from "./Sections/Favorite"
 
 
 function MovieDetail(props) {
@@ -48,6 +49,7 @@ function MovieDetail(props) {
             />
             {/*Body*/}
             <div style={{ width: '85%', margin: '1rem auto'}}>
+                <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
                 {/*Movie Info*/}
                 <MovieInfo movie={Movie}/>
 
